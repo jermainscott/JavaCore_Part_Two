@@ -1,4 +1,5 @@
 package Part2;
+
 import java.util.*;
 
 public class Task_PartTwo {
@@ -13,16 +14,23 @@ public class Task_PartTwo {
     public static void main(String[] args) {
         String song = UpdatedTask_PartOne.song;
         String updatedSong = song.replaceAll("[,\\n]", "").toLowerCase();
+
+        //List String of songs from Task 2
         List<String> wrds = new ArrayList<>(List.of(updatedSong.split(" ")));
+
+
+        // Print initial words and their count
         wrds.forEach(System.out::println);
-        System.out.println(wrds.size()); //prints the amount of words before duplicate words are removed
-        wrds = wrds.stream().distinct().sorted(Comparator.comparing(String::length))
-                .toList();// Sort song words by String length
+        System.out.println("Initial word count: " + wrds.size());
+
+        // Remove duplicates and sort by length
+        wrds = wrds.stream().distinct().sorted(Comparator.comparing(String::length)).toList();
+
+        System.out.println("Unique words");
         wrds.forEach(System.out::println);
-        System.out.println(wrds.size());//prints the amount of words after duplicate words are removed
+        System.out.println("Unique word count: " + wrds.size());
+        //prints the amount of words after duplicate words are removed
     }
-
-
 
 
 
