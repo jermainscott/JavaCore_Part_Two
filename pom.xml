@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>Collections_Arrays</module>
+        <module>Regex</module>
     </modules>
 
     <properties>
